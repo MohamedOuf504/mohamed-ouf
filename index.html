@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>تموين</title>
+</head>
+
+<body>
+  <section class="py-5">
+    <h1 class="text-center">حساب التسويات  شهر <span class="month"></span></h1>
+    <div class="container">
+      <div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          اضافه تسويه
+        </button>
+      </div>
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <th>التاريخ</th>
+            <th>اجمالي المبيعات</th>
+            <th>عدد العمليات</th>
+            <th>تعديل</th>
+            <th>حذف</th>
+          </thead>
+          <tbody id="tbody"></tbody>
+          <tfoot id="tfoot">
+            <tr>
+              <td>الاجمالي</td>
+              <td id="sumtotal"></td>
+              <td id="sumcount"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h1 class="text-center">حساب الفرع شهر <span class="month"></span></h1>
+    <div class="container">
+      <div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#import">
+          اضافه سلعه
+        </button>
+      </div>
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <th>التاريخ</th>
+            <th>اسم الصنف</th>
+            <th>الكميه</th>
+            <th>النوع</th>
+            <th>السعر</th>
+
+            <th>تعديل</th>
+            <th>حذف</th>
+          </thead>
+          <tbody  id="tbody2">
+
+          </tbody>        
+            <tfoot id="tfoot">
+            <tr>
+              <td>الاجمالي</td>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th id="sum2"></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h1 class="text-center">  حساب الاستكمال شهر <span class="month"></span> </h1>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <th>اجمالي المبيعات</th>
+          <th>استكمال الشهر السابق</th>
+          <th>اجمالي الوارد من الفرع</th>
+          <th>الاستكمال من الشهر الحالي</th>
+        </thead>
+       <tbody>
+         <tr>
+           <td id="one"></td>
+           <td id="tow"></td>
+           <td id="three"></td>
+           <td id="four"></td>
+
+         </tr>
+       </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">تسجيل تسويه</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="date" name="" id="data" placeholder=" تاريخ" value="2022-01-01" class="form-control my-2" />
+          <input type="number" name="" id="total" placeholder="اجمالي مبيعات" value="0" class="form-control my-2" />
+          <input type="number" name="" id="count" placeholder=" عدد العمليات" value="0" class="form-control my-2" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            الغاء
+          </button>
+          <button type="button" class="btn btn-primary" id="addBtn" data-bs-dismiss="modal">
+            <a class="text-white" href="index.html">تسجيل</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="import" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">اضافه سلعه</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="date" name="" id="data" placeholder=" تاريخ" value="" class="form-control my-2" />
+          <input type="text" name="" id="name" placeholder=" الصنف" value="" class="form-control my-2" />
+          <input type="text" name="" id="amount" placeholder="  الكميه" value="" class="form-control my-2" />
+          <input type="text" name="" id="cat" placeholder="  النوع" value="" class="form-control my-2" />
+          <input type="number" name="" id="price" placeholder="  السعر" value="" class="form-control my-2" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            الغاء 
+          </button>
+          <button type="button" class="btn btn-primary" id="addBtn2" data-bs-dismiss="modal">
+            <a class="text-white" href="index.html">تسجيل</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="JS/jquery-3.6.0.min.js"></script>
+  <script src="JS/main.js"></script>
+</body>
+
+</html>
