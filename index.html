@@ -12,28 +12,29 @@
 </head>
 
 <body>
-  <div class="loader  w-100 h-100 position-fixed bg-black justify-content-center d-flex align-items-center text-white ">
-<svg width="200" height="200" id="svg">
-  <circle id="dot1" class="shape" />
-  <circle id="dot2" class="shape" />
-  <circle id="dot3" class="shape" />
-  <circle id="dot4" class="shape" />
-</svg>
-<div class="control-panel">
-  <p class="switch-label text-white" id="switchLabel">Dark Mode</p>
-  <label class="switch">
-    <input type="checkbox" id="myCheck" onclick="darkFunction()">
-    <span class="slider round"></span>
-  </label>
-  <p class="switch-label text-white" id="switchLabel2">Dot Movement</p>
-  <label class="switch movement">
-    <input type="checkbox" id="myCheck2" onclick="movementFunction()">
-    <span class="slider round"></span>
-  </label>
-</div>
+  <div class=" loader   ">
+    <svg width="200" height="200" id="svg">
+      <circle id="dot1" class="shape" />
+      <circle id="dot2" class="shape" />
+      <circle id="dot3" class="shape" />
+      <circle id="dot4" class="shape" />
+    </svg>
+    <div class="control-panel">
+      <p class="switch-label text-white" id="switchLabel">Dark Mode</p>
+      <label class="switch">
+        <input type="checkbox" id="myCheck" onclick="darkFunction()">
+        <span class="slider round"></span>
+      </label>
+      <p class="switch-label text-white" id="switchLabel2">Dot Movement</p>
+      <label class="switch movement">
+        <input type="checkbox" id="myCheck2" onclick="movementFunction()">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
+
   <section class="py-5">
-    <h1 class="text-center">حساب التسويات  شهر <span class="month"></span></h1>
+    <h1 class="text-center">حساب التسويات شهر <span class="month"></span></h1>
     <div class="container">
       <div>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -81,10 +82,10 @@
             <th>تعديل</th>
             <th>حذف</th>
           </thead>
-          <tbody  id="tbody2">
+          <tbody id="tbody2">
 
-          </tbody>        
-            <tfoot id="tfoot">
+          </tbody>
+          <tfoot id="tfoot">
             <tr>
               <td>الاجمالي</td>
               <th></th>
@@ -99,7 +100,7 @@
   </section>
 
   <section>
-    <h1 class="text-center">  حساب الاستكمال شهر <span class="month"></span> </h1>
+    <h1 class="text-center"> حساب الاستكمال شهر <span class="month"></span> </h1>
     <div class="container">
       <table class="table table-striped">
         <thead>
@@ -108,15 +109,15 @@
           <th>اجمالي الوارد من الفرع</th>
           <th>الاستكمال من الشهر الحالي</th>
         </thead>
-       <tbody>
-         <tr>
-           <td id="one"></td>
-           <td id="tow"></td>
-           <td id="three"></td>
-           <td id="four"></td>
+        <tbody>
+          <tr>
+            <td id="one"></td>
+            <td id="tow"></td>
+            <td id="three"></td>
+            <td id="four"></td>
 
-         </tr>
-       </tbody>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>
@@ -165,7 +166,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            الغاء 
+            الغاء
           </button>
           <button type="button" class="btn btn-primary" id="addBtn2" data-bs-dismiss="modal">
             <a class="text-white" href="index.html">تسجيل</a>

@@ -81,15 +81,16 @@ function movementFunction() {
 }
 
 
-const loader = document.querySelector(".loader");
 window.onload = function(){
-  setTimeout(function(){
-    loader.style.opacity = "0";
-    setTimeout(function(){
-      loader.style.display = "none";
-    }, 500);
-  },1500);
-}
+  $("#svg").fadeOut(2000 , ()=>{
+
+    $(".loader").fadeOut(1000)
+
+  });
+
+  console.log("f");
+  }
+  
 let sumtotal = 0
 let sumcount = 0
 let allData = ''
